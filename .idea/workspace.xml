@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="217ae6c4-c367-4ea6-ab1d-7768916bbf76" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/autohome-binder-rfxcom/MessageTypeMap.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/autohome-binder-rfxcom/RfxcomDriver.js" afterPath="$PROJECT_DIR$/autohome-binder-rfxcom/RfxcomDriver.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/autohome-binder-rfxcom/package.json" afterPath="$PROJECT_DIR$/autohome-binder-rfxcom/package.json" />
@@ -84,8 +82,8 @@
       <file leaf-file-name="RfxcomDriver.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/autohome-binder-rfxcom/RfxcomDriver.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="343">
-              <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
+            <state relative-caret-position="404">
+              <caret line="73" column="12" selection-start-line="73" selection-start-column="12" selection-end-line="73" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -371,7 +369,7 @@
       <option name="presentableId" value="Default" />
       <updated>1472417571041</updated>
       <workItem from="1472417572336" duration="338000" />
-      <workItem from="1472417928018" duration="3909000" />
+      <workItem from="1472417928018" duration="4552000" />
     </task>
     <task id="LOCAL-00001" summary="some stuff">
       <created>1472417981606</created>
@@ -387,11 +385,18 @@
       <option name="project" value="LOCAL" />
       <updated>1472418269987</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Improved rfxcom message handling">
+      <created>1472496366842</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1472496366842</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4247000" />
+    <option name="totallyTimeSpent" value="4890000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -429,7 +434,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="some stuff" />
     <MESSAGE value="added npmignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="added npmignore" />
+    <MESSAGE value="Improved rfxcom message handling" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improved rfxcom message handling" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -536,8 +542,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/autohome-binder-rfxcom/RfxcomDriver.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
+        <state relative-caret-position="404">
+          <caret line="73" column="12" selection-start-line="73" selection-start-column="12" selection-end-line="73" selection-end-column="12" />
           <folding />
         </state>
       </provider>

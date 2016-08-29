@@ -70,7 +70,8 @@ class RfxcomDriver extends EventEmitter {
             return;
         }
 
-        this.emit("message", message);
+        if (message)
+            this.emit("message", message);
     }
 
     _write(data, dataWritten) {
