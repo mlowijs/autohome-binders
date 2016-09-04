@@ -7,10 +7,6 @@ class InterfaceMessage extends Message {
         this.commandType = data[4];
         this.transceiverType = data[5];
     }
-
-    getType() {
-        return "interface";
-    }
 }
 
 InterfaceMessage.PACKET_TYPE_ID = 0x01;

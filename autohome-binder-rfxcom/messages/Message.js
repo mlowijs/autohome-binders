@@ -8,10 +8,6 @@ class Message {
         this.sequenceNumber = data[3];
     }
 
-    getType() {
-        throw new Error("Not implemented.");
-    }
-
     matchBinding(binding) {
         throw new Error("Not implemented.");
     }

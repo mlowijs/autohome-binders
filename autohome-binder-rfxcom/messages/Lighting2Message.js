@@ -12,12 +12,8 @@ class Lighting2Message extends Message {
         this.signalLevel = data[11];
     }
 
-    getType() {
-        return "lighting2";
-    }
-
     matchBinding(binding) {
-        if (binding.packetType !== this.getType())
+        if (binding.packetType !== Lighting2Message.PACKET_TYPE_STRING)
             return false;
 
         if (binding.isGroup)
