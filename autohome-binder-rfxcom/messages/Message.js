@@ -1,3 +1,5 @@
+const os = require("os");
+
 class Message {
     constructor(data) {
         this.length = data[0];
@@ -16,6 +18,15 @@ class Message {
 
     getValue() {
         throw new Error("Not implemented.");
+    }
+
+    toString() {
+        return os.EOL + [
+            `Length: ${this.length}`,
+            `Packet type: ${this.packetType}`,
+            `Sub type: ${this.subType}`,
+            `Sequence number: ${this.sequenceNumber}`
+        ].join(os.EOL);
     }
 }
 

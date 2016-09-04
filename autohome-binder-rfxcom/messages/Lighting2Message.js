@@ -1,4 +1,5 @@
 const Message = require("./Message");
+const os = require("os");
 
 class Lighting2Message extends Message {
     constructor(data) {
@@ -28,8 +29,24 @@ class Lighting2Message extends Message {
     getValue() {
         return this.onOff;
     }
+
+
+    toString() {
+        return [
+            super.toString(),
+            `ID: ${this.id}`,
+            `Unit: ${this.unit}`,
+            `Is group: ${this.isGroup}`,
+            `On/off: ${this.onOff}`,
+            `Signal level: ${this.signalLevel}`
+        ].join(os.EOL);
+    }
 }
 
-Lighting2Message.packetType = 0x11;
+Lighting2Message.PACKET_TYPE_ID = 0x11;
+Lighting2Message.PACKET_TYPE_STRING = "lighting2";
+
+Lighting2Message.PACKET_SUBTYPE_AC_ID = 0x00;
+Lighting2Message.PACKET_SUBTYPE_AC_STRING = "ac";
 
 module.exports = Lighting2Message;

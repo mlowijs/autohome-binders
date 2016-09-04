@@ -1,7 +1,9 @@
+const Lighting2Message = require("../messages/Lighting2Message");
+
 class Lighting2MessageFactory {
     createMessage(sequenceNr, binding, value) {
         switch (binding.subType.toLowerCase()) {
-            case "ac":
+            case Lighting2Message.PACKET_SUBTYPE_AC_STRING:
                 return this._createAcMessage(sequenceNr, binding.id, binding.unit, value, false);
         }
 
@@ -9,7 +11,7 @@ class Lighting2MessageFactory {
     }
 
     _createAcMessage(sequenceNr, id, unit, onOff, isGroup) {
-        const packet = [0x0b, 0x11, 0x00, sequenceNr,
+        const packet = [Lighting2Message.PACKET_TYPE_ID, Lighting2Message.PACKET_SUBTYPE_AC_ID, sequenceNr,
             (id & 0xff000000) >> 24, (id & 0xff0000) >> 16, (id & 0xff00) >> 8, (id & 0xff), unit,
         ];
 
@@ -19,7 +21,9 @@ class Lighting2MessageFactory {
             packet.push(onOff ? 0x01 : 0x00);
 
         packet.push(onOff ? 0x0f : 0x00);
-        packet.push(0x00);
+        packet.push(0x00); // Signal level
+
+        packet.unshift(packet.length);
 
         return packet;
     }

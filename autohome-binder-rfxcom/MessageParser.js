@@ -6,10 +6,10 @@ class MessageParser {
         const packetType = data[1];
 
         switch (packetType) {
-            case InterfaceMessage.packetType:
+            case InterfaceMessage.PACKET_TYPE_ID:
                 return new InterfaceMessage(data);
 
-            case Lighting2Message.packetType:
+            case Lighting2Message.PACKET_TYPE_ID:
                 return new Lighting2Message(data);
         }
 

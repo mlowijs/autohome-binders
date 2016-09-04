@@ -3,6 +3,7 @@ const InterfaceMessage = require("./messages/InterfaceMessage");
 const MessageFactory = require("./MessageFactory");
 const MessageParser = require("./MessageParser");
 const SerialPort = require("serialport");
+const os = require("os");
 
 class RfxcomDriver extends EventEmitter {
     constructor(loggerFactory, portName, portOpened) {
@@ -58,10 +59,11 @@ class RfxcomDriver extends EventEmitter {
     }
 
     _receiveMessage(data) {
+        this._logger.debug(`Received ${data.length} bytes from RFXCOM.`);
         const message = MessageParser.parseMessage(data);
 
-        if (message && message.packetType === InterfaceMessage.packetType && message.commandType === InterfaceMessage.statusCommand) {
-            this._logger.info("RFXCOM initialized.");
+        if (message && message.packetType === InterfaceMessage.PACKET_TYPE_ID && message.commandType === InterfaceMessage.COMMAND_STATUS) {
+            this._logger.debug("RFXCOM initialized.");
 
             this._sequenceNumber = message.sequenceNumber;
             this._initialized = true;
@@ -70,8 +72,10 @@ class RfxcomDriver extends EventEmitter {
             return;
         }
 
-        if (message)
+        if (message) {
+            this._logger.debug(`Received RFXOM message: ${message.toString()}`);
             this.emit("message", message);
+        }
     }
 
     _write(data, dataWritten) {
